@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js install express && node index.js uninstall express"
+    "test": "node bin.j nstall express && node bin.js uninstall express"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,5 @@
   "dependencies": {
     "commander": "^14.0.0",
     "pacote": "^21.0.0"
-  }
+  },"bin": "bin.js"
 }
