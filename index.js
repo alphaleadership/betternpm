@@ -103,6 +103,13 @@ program
                     console.log(`Dossier ${item} contient ${files.length} fichiers`);
                     files.forEach((file, index) => {
                         console.log(`${index + 1}. ${file}`);
+                        if(file==="package.json"){
+                            let t=fs.readFileSync(path.join(process.cwd(), 'node_modules', item, file), 'utf8');
+                            let dependencies=JSON.parse(t).dependencies.concat(JSON.parse(t).devDependencies);
+                            for(let i in dependencies){
+                                items.push(i);
+                            }
+                        }
                         if(fs.statSync(path.join(process.cwd(), 'node_modules', item, file)).isDirectory()) {
                             console.log(`Suppression du dossier ${file}`);
                             if(fs.readdirSync(path.join(process.cwd(    ), 'node_modules', item, file)).length === 0) {
