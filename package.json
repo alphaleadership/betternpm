@@ -13,6 +13,6 @@
   "type": "commonjs",
   "dependencies": {
     "commander": "^14.0.0",
-    "pacote": "^21.0.0"
+    "pacote": "^22.0.1"
   },"bin": "bin.js"
 }
